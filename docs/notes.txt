@@ -1,0 +1,57 @@
+Objective: 
+To create a tool that allows users to input or scan the ingredients of makeup products and receive detailed 
+information about their safety, potential effects, and environmental impact.
+
+Target Audience: 
+Beauty-conscious individuals who are concerned about the safety and sustainability of their makeup products.
+
+Core Features:
+- Ingredient scanner (via text input or barcode scanning).
+- Detailed ingredient analysis, including potential allergens, irritants, and harmful chemicals.
+- Suggestions for safer or more sustainable alternative products.
+- User feedback and community-driven data improvements.
+
+2. Technology Stack
+- Frontend: 
+	- Python (with Flask or Django) or JavaScript (for a more interactive UI).
+	- HTML/CSS for the user interface design.
+	- JavaScript libraries (e.g., React or Vue.js) for a dynamic and responsive experience.
+
+- Backend: 
+	- Python with Flask/Django for handling requests, data processing, and API integration. 
+	- C++ could be used for complex processing tasks if performance optimization is needed.
+	- A database (e.g., SQLite, PostgreSQL) to store ingredient information and user data.
+- APIs & Libraries: 
+	- OpenFDA or other public databases for ingredient data.
+	- Barcode scanning libraries (if you include scanning).
+	- Web scraping tools (e.g., BeautifulSoup, Scrapy) to gather ingredient data from various sources.
+
+3. Core Features Development
+- Ingredient Input and Scanning: 
+	- Implement text input where users can paste ingredient lists.
+	- Integrate a barcode scanner (if using mobile/webcam) to retrieve product details.
+- Ingredient Analysis:
+	- Build or integrate a database of ingredients, detailing their safety, common uses, and potential effects.
+	- Develop algorithms to match user input with database entries, highlighting potential concerns.
+	- Provide user-friendly explanations and warnings (e.g., “This ingredient may cause irritation in sensitive skin”).
+- Alternative Suggestions:
+	- Offer suggestions for safer or eco-friendlier alternatives based on the analysis.
+	- Include links to where users can purchase these alternatives.
+
+4. Additional Features (Optional)
+- Custom Profiles: Let users create profiles to save their preferences, track scanned products, and get tailored recommendations.
+- Social Sharing: Enable users to share their ingredient analysis on social media platforms.
+- Ingredient Trends: Provide insights into trending safe or harmful ingredients based on aggregated user data.
+
+5. User Interface Design
+- Simple, Clean Design: Focus on a user-friendly interface that’s easy to navigate.
+- Visual Feedback: Use color-coding (e.g., green for safe, red for harmful) to quickly convey information.
+- Mobile Optimization: Ensure the tool works well on mobile devices for on-the-go ingredient checking.
+
+What I want in the Site:
+knows each ingredient
+can tell you what each ingredient does
+allows you to filter product based on ingrdient 
+how safe the product is for the skin
+safe for acne prone skin, drk skin, combination skin
+not tested on animals
