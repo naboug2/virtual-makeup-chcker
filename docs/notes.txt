@@ -55,3 +55,6 @@ allows you to filter product based on ingrdient
 how safe the product is for the skin
 safe for acne prone skin, drk skin, combination skin
 not tested on animals
+
+
+Google CLOUD API Key: AIzaSyD05FOx1dctjUOn65oxBzZP3AKKhVKX_tI
