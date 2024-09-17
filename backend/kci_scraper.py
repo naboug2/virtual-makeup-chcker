@@ -21,10 +21,11 @@ class Ingredient(db.Model):
     definition_english = db.Column(db.Text)
     mixing_purpose_korean = db.Column(db.Text)  
     mixing_purpose_english = db.Column(db.Text)
-    
+
 # Set up Google Cloud credentials
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\nuhaa\Desktop\virtual makeup checker\docs\cloud_translate_service_acount.json"
 translate_client = translate.Client()
+
 
 def translate_text(text, target_language="en"):
     """Translates text into the target language."""
@@ -37,11 +38,11 @@ def safe_get_text(soup, selector):
     return element.get_text(strip=True) if element else "N/A"
 
 # Iterate over a range of ingredient IDs
-for ingredient_id in range(800, 850):  # Adjust the range as needed
+for ingredient_id in range(1, 19180):  # Adjust the range as needed
     url = f'https://kcia.or.kr/cid/search/ingd_view.php?no={ingredient_id}'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'lxml')
-    
+
     # Use safe_get_text to avoid AttributeError
     ingredient_code = safe_get_text(soup, '#content > div > div.sub_content > div > div > table:nth-child(3) > tbody > tr:nth-child(1) > td > p')
     ingredient_name_korean = safe_get_text(soup, '#content > div > div.sub_content > div > div > table:nth-child(3) > tbody > tr:nth-child(2) > td:nth-child(2) > p > b')
@@ -52,7 +53,7 @@ for ingredient_id in range(800, 850):  # Adjust the range as needed
     # Translate the Korean text if available
     definition_english = translate_text(definition_korean) if definition_korean != "N/A" else "N/A"
     mixing_purpose_english = translate_text(mixing_purpose_korean) if mixing_purpose_korean != "N/A" else "N/A"
-    
+
     # Store the data in the database
     new_ingredient = Ingredient(
         code=ingredient_code,
@@ -62,27 +63,11 @@ for ingredient_id in range(800, 850):  # Adjust the range as needed
         definition_korean=definition_korean,
         definition_english=definition_english,
         mixing_purpose_korean=mixing_purpose_korean,  
-        mixing_purpose_english=mixing_purpose_english 
+        mixing_purpose_english=mixing_purpose_english
     )
-    
+
     with app.app_context():
         db.session.add(new_ingredient)
         db.session.commit()
 
     print(f"Stored ingredient: {ingredient_name_english}")
-    
-    
-    
-    
-    # # Print or store the data
-    # print(f"Ingredient Code: {ingredient_code}")
-    # print(f"Ingredient Name (Korean): {ingredient_name_korean}")
-    # print(f"Ingredient Name (English): {ingredient_name_english}")
-    # print(f"CAS No.: {cas_no}")
-    # print(f"Definition (Korean): {definition_korean}")
-    # print(f"Definition (English): {definition_english}")
-    # print(f"Mixing Purpose (Korean): {mixing_purpose_korean}")
-    # print(f"Mixing Purpose (English): {mixing_purpose_english}")
-    
-    # print(" ")
-

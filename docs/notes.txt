@@ -13,7 +13,7 @@ Core Features:
 
 2. Technology Stack
 - Frontend: 
-	- Python (with Flask or Django) or JavaScript (for a more interactive UI).
+	- Python (with Flask) or JavaScript (for a more interactive UI).
 	- HTML/CSS for the user interface design.
 	- JavaScript libraries (e.g., React or Vue.js) for a dynamic and responsive experience.
 
@@ -51,10 +51,11 @@ Core Features:
 What I want in the Site:
 knows each ingredient
 can tell you what each ingredient does
-allows you to filter product based on ingrdient 
+allows you to filter product based on ingredient 
 how safe the product is for the skin
 safe for acne prone skin, drk skin, combination skin
 not tested on animals
+find ways to check for any updates on ingredients or if any new ingredients were added.
 
 
 Google CLOUD API Key: AIzaSyD05FOx1dctjUOn65oxBzZP3AKKhVKX_tI
