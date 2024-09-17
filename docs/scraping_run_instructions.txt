@@ -1,0 +1,25 @@
+Scraping Run Instructions
+
+1. Activate Virtual Environment:
+Before running the code, activate the virtual environment: 
+     .\venv\Scripts\activate
+
+2. Verify Required Libraries:
+Ensure the required libraries (e.g., lxml, google-cloud-translate, beautifulsoup4) are installed: 
+     pip install -r requirements.txt
+
+3. Set Google Cloud Credentials:
+- Ensure the environment variable for Google Cloud API credentials is set: 
+     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"path\to\your\cloud_translate_service_account.json"
+
+4. Enable Google Cloud Translation API:
+- Ensure the Google Cloud Translation API is enabled in the Google Cloud Console for your project. 
+     https://console.cloud.google.com/apis/api/translate.googleapis.com/metrics?project=stunning-base-433601-t8 
+
+5. Running the Scraper: 
+To run the scraper script, use the following command: 
+     python backend/kci_scraper.py
+
+Common Issues:
+- Missing lxml: Install it using: pip install lxml.
+- Google API errors: Ensure the credentials are correct and the API is enabled in your Google Cloud project.
